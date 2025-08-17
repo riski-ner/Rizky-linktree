@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkTree Retro Pixel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #0d0d0d;
+            --neon-green: #00ff66;
+            --neon-pink: #ff00cc;
+            --neon-blue: #00ccff;
+            --neon-yellow: #fff000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/870bb421-c9b1-4466-af3b-dc855124e1de.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            margin-bottom: 15px;
+        }
+        
+        .profile h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--neon-pink);
+            letter-spacing: 2px;
+        }
+        
+        .profile p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .link {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid transparent;
+            border-image: linear-gradient(45deg, var(--neon-green), var(--neon-blue)) 1;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+        }
+        
+        .link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.6);
+            color: var(--neon-yellow);
+        }
+        
+        .link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 255, 102, 0.3), rgba(0, 204, 255, 0.3));
+            top: 0;
+            left: -100%;
+            transition: 0.4s;
+            z-index: -1;
+        }
+        
+        .link:hover::before {
+            left: 0;
+        }
+        
+        .link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .whatsapp {
+            color: #25D366;
+        }
+        
+        .tiktok {
+            color: #69C9D0;
+            text-shadow: 0 0 5px #EE1D52;
+        }
+        
+        .instagram {
+            color: #E1306C;
+        }
+        
+        .youtube {
+            color: #FF0000;
+        }
+        
+        .facebook {
+            color: #1877F2;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        .pixel-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-green);
+            z-index: -1;
+        }
+        
+        .top-left {
+            top: -10px;
+            left: -10px;
+            border-bottom: none;
+            border-right: none;
+        }
+        
+        .top-right {
+            top: -10px;
+            right: -10px;
+            border-bottom: none;
+            border-left: none;
+        }
+        
+        .bottom-left {
+            bottom: -10px;
+            left: -10px;
+            border-top: none;
+            border-right: none;
+        }
+        
+        .bottom-right {
+            bottom: -10px;
+            right: -10px;
+            border-top: none;
+            border-left: none;
+        }
+        
+        @media (max-width: 480px) {
+            .profile h1 {
+                font-size: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .link {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="pixel-corner top-left"></div>
+            <div class="pixel-corner top-right"></div>
+            <div class="pixel-corner bottom-left"></div>
+            <div class="pixel-corner bottom-right"></div>
+            
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3ef906f9-9c2b-4350-85fc-a9fffd17b749.png" 
+                 alt="Retro pixel art avatar with neon green outline" 
+                 class="profile-img">
+            <h1>RIZKY LINKTREE</h1>
+            <p>Connect with me on social media</p>
+        </div>
+        
+        <div class="links">
+            <a href="https://wa.me/+6285268115470" class="link" target="_blank">
+                <i class="fab fa-whatsapp whatsapp"></i> WhatsApp
+            </a>
+            
+            <a href="https://tiktok.com/@apf2315" class="link" target="_blank">
+                <i class="fab fa-tiktok tiktok"></i> TikTok
+            </a>
+            
+            <a href="https://www.instagram.com/rizky_pratama1242?igsh=cTc0Zmx5Z291am83" class="link" target="_blank">
+                <i class="fab fa-instagram instagram"></i> Instagram
+            </a>
+            
+            <a href="https://www.youtube.com/@riskipratamariski6528" class="link" target="_blank">
+                <i class="fab fa-youtube youtube"></i> YouTube
+            </a>
+            
+            <a href="https://www.facebook.com/share/1AnSbjPVDE/" class="link" target="_blank">
+                <i class="fab fa-facebook facebook"></i> Facebook
+            </a>
+        </div>
+        
+        <div class="footer">
+            © 2025 RetroPixel LinkTree | All Rights Reserved
+        </div>
+    </div>
+    
+    <script>
+        // Simple hover animation enhancement
+        document.querySelectorAll('.link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                const colors = ['#00ff66', '#ff00cc', '#00ccff', '#fff000'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                this.style.boxShadow = `0 0 20px ${randomColor}`;
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 0 10px rgba(0, 204, 255, 0.3)';
+            });
+        });
+    </script>
+</body>
+</html>
+
